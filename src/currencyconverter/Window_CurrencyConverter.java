@@ -37,6 +37,9 @@ public class Window_CurrencyConverter extends javax.swing.JFrame {
         jComboBox_ConverterFrom = new javax.swing.JComboBox<>();
         jComboBox_ConverterTo = new javax.swing.JComboBox<>();
         jButton_Aceptar = new javax.swing.JButton();
+        jButton_comeBack = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,14 +51,14 @@ public class Window_CurrencyConverter extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(94, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(76, 76, 76))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap())
         );
@@ -64,6 +67,7 @@ public class Window_CurrencyConverter extends javax.swing.JFrame {
 
         jComboBox_ConverterTo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona una moneda", "Pesos (MXN)", "Canadian Dollars (CAD)", "Euros (EUR)", "Dollars (USD)", "Hong Kong Dollars (HKD)", "Indian Rubies (INR)" }));
 
+        jButton_Aceptar.setBackground(new java.awt.Color(102, 204, 0));
         jButton_Aceptar.setText("Aceptar");
         jButton_Aceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,44 +75,74 @@ public class Window_CurrencyConverter extends javax.swing.JFrame {
             }
         });
 
+        jButton_comeBack.setBackground(new java.awt.Color(255, 102, 102));
+        jButton_comeBack.setText("Regresar");
+        jButton_comeBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_comeBackActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setText("De");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setText("A");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jComboBox_ConverterFrom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox_ConverterTo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton_Aceptar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton_Aceptar)
+                    .addComponent(jComboBox_ConverterFrom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox_ConverterTo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_comeBack))
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(107, 107, 107))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox_ConverterFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox_ConverterTo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_Aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33))
+                    .addComponent(jComboBox_ConverterTo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton_Aceptar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton_comeBack, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,26 +150,45 @@ public class Window_CurrencyConverter extends javax.swing.JFrame {
 
     private void jButton_AceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AceptarActionPerformed
         // TODO add your handling code here:
-        System.out.println(jComboBox_ConverterFrom.getSelectedIndex());
-        System.out.println(jComboBox_ConverterTo.getSelectedIndex());
-        System.out.println("Esto es valueAmount"+valueAmount);
-                
-        int fromConverter = jComboBox_ConverterFrom.getSelectedIndex();
-        int toConverter = jComboBox_ConverterTo.getSelectedIndex();
-        
-        ApiCcurrencylayeConversor callApi = new ApiCcurrencylayeConversor();
-        
-        objResult = (JSONObject) callApi.getApiAmount(valueAmount, fromConverter, toConverter); 
-
-        Window_Result abrir = null;
         try {
-            abrir = new Window_Result();
-        } catch (JSONException ex) {
-            Logger.getLogger(Window_CurrencyConverter.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        abrir.setVisible(true);
-        abrir.setLocationRelativeTo(null);                         
+            int selectedFrom = jComboBox_ConverterFrom.getSelectedIndex();
+            int selectedTo   = jComboBox_ConverterTo.getSelectedIndex();
+            System.out.println(selectedFrom);
+            System.out.println(selectedTo);
+            System.out.println("Esto es valueAmount"+valueAmount);
+                        
+            if(selectedFrom > 0 && selectedTo > 0){                
+                int fromConverter = jComboBox_ConverterFrom.getSelectedIndex();
+                int toConverter = jComboBox_ConverterTo.getSelectedIndex();
+
+                ApiCcurrencylayeConversor callApi = new ApiCcurrencylayeConversor();
+
+                objResult = (JSONObject) callApi.getApiAmount(valueAmount, fromConverter, toConverter); 
+
+                Window_Result abrir = null;
+                try {
+                    abrir = new Window_Result();
+                } catch (JSONException ex) {
+                    Logger.getLogger(Window_CurrencyConverter.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                dispose();
+                abrir.setVisible(true);
+                abrir.setLocationRelativeTo(null); 
+            } else{
+                JOptionPane.showMessageDialog(null, "Seleccione una opción válida");
+            }                        
+        } catch (Exception e) {
+            System.out.println(e);
+        }                        
     }//GEN-LAST:event_jButton_AceptarActionPerformed
+
+    private void jButton_comeBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_comeBackActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        Window_AmountValueEntry abrir = new Window_AmountValueEntry();
+        abrir.setVisible(true);
+        abrir.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton_comeBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,9 +227,12 @@ public class Window_CurrencyConverter extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Aceptar;
+    private javax.swing.JButton jButton_comeBack;
     private javax.swing.JComboBox<String> jComboBox_ConverterFrom;
     private javax.swing.JComboBox<String> jComboBox_ConverterTo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
