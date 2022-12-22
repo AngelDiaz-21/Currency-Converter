@@ -1,5 +1,7 @@
 package currencyconverter;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Angel
@@ -39,14 +41,16 @@ public class Window_AmountValueEntry extends javax.swing.JFrame {
 
         jTextField_amount.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        jButton_ok.setText("Ok");
+        jButton_ok.setBackground(new java.awt.Color(102, 204, 0));
+        jButton_ok.setText("Aceptar");
         jButton_ok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_okActionPerformed(evt);
             }
         });
 
-        jButton_cancel.setText("Cancel");
+        jButton_cancel.setBackground(new java.awt.Color(255, 102, 102));
+        jButton_cancel.setText("Cancelar");
         jButton_cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_cancelActionPerformed(evt);
@@ -108,18 +112,21 @@ public class Window_AmountValueEntry extends javax.swing.JFrame {
 
     private void jButton_okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_okActionPerformed
         // TODO add your handling code here:
-        // Se obtiene el valor del jTextField_amount y al mismo tiempo se transforma de String a Double
-        valueAmount = Double.parseDouble(jTextField_amount.getText());
-        System.out.println(valueAmount);
-        
-        if(valueAmount <= 0.00){
-            System.out.println("No puedes ingresar un monto menor a 0");
-        } 
-
-        dispose();
-        Window_CurrencyConverter abrir = new Window_CurrencyConverter();
-        abrir.setVisible(true);
-        abrir.setLocationRelativeTo(null);
+        try {
+             // Se obtiene el valor del jTextField_amount y al mismo tiempo se transforma de String a Double
+            valueAmount = Double.parseDouble(jTextField_amount.getText());
+            if(valueAmount <= 0.00){
+                JOptionPane.showMessageDialog(null, "Ingrese un monto mayor a 0");
+            } else{
+                dispose();
+                Window_CurrencyConverter abrir = new Window_CurrencyConverter();
+                abrir.setVisible(true);
+                abrir.setLocationRelativeTo(null);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+            JOptionPane.showMessageDialog(null, "Ingrese solo números");
+        }        
     }//GEN-LAST:event_jButton_okActionPerformed
 
     private void jButton_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_cancelActionPerformed

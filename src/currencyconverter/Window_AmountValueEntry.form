@@ -100,7 +100,10 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton_ok">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ok"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="cc" red="66" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Aceptar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_okActionPerformed"/>
@@ -108,7 +111,10 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton_cancel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cancel"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Cancelar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_cancelActionPerformed"/>
