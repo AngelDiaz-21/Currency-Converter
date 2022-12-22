@@ -153,9 +153,6 @@ public class Window_CurrencyConverter extends javax.swing.JFrame {
         try {
             int selectedFrom = jComboBox_ConverterFrom.getSelectedIndex();
             int selectedTo   = jComboBox_ConverterTo.getSelectedIndex();
-            System.out.println(selectedFrom);
-            System.out.println(selectedTo);
-            System.out.println("Esto es valueAmount"+valueAmount);
                         
             if(selectedFrom > 0 && selectedTo > 0){                
                 int fromConverter = jComboBox_ConverterFrom.getSelectedIndex();
